@@ -16,7 +16,9 @@
         :root {
             --primary-color: #ff69b4;
             --accent-color: #ff46a9;
+            --outline-color: rgba(255, 20, 147, 0.3);
             --blur-intensity: 8px;
+            
         }
 
         body {
@@ -67,8 +69,8 @@
             background: linear-gradient(145deg, rgba(255, 20, 147, 0.15), rgba(255, 20, 147, 0.1));
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            outline: 2px solid rgba(255, 20, 147, 0.3);
-            outline-offset: 5px;
+            outline: 2px solid var(--outline-color);
+            outline-offset: 5px; 
         }
 
         nav a:active {
@@ -168,8 +170,8 @@
         .product-button:hover {
             background: var(--primary-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
-            outline: 2px solid rgba(255, 20, 147, 0.3);
+            box-shadow: 0 4px 15px var(--outline-color);
+            outline: 2px solid var(--outline-color);
             outline-offset: 5px;
         }
 
@@ -368,8 +370,8 @@
             .connections-section button:hover {
                 background: var(--primary-color) ;
                 transform: translateY(-2px) ;
-                box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3) ;
-                outline: 2px solid rgba(255, 20, 147, 0.3) ;
+                box-shadow: 0 4px 15px var(--outline-color) ;
+                outline: 2px solid var(--outline-color) ;
                 outline-offset: 5px ;
             }
 
