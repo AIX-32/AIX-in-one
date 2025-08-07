@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AIX in one</title>
-  <link rel="icon" href="./extra/favicon-16x16.png">
-  <link rel="icon" href="./extra/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./extra/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./extra/favicon-16x16.png">
+
   <meta property="og:image" content="https://raw.githubusercontent.com/AIX-32/AIX-in-one/refs/heads/main/img/readmeimg.png" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="AIX in One" />
@@ -82,6 +83,7 @@
       object-fit: cover;
       border-radius: 8px;
       transition: all 0.4s ease;
+      
     }
     .imgbox:hover {
       transform: translateY(6px);
@@ -120,9 +122,16 @@
     }
     a {
       text-decoration: none;
+     
       color: #fff;
     }
-
+i {
+  color: #ffffff;
+  transition: all 0.4s ease;
+}
+i:hover {
+  transform: translateY(-5px);
+} 
 .card {
   width: 100%;
   min-height: 40px;
@@ -137,6 +146,7 @@
   font-size: 1rem;
   text-align: center;
   line-height: 1.4;
+  border: 1px solid rgba(255, 255, 255, 0.13);
 }
 .redcirclework {
   width: 14px;
@@ -147,6 +157,7 @@
   margin-left: 10px;
   box-shadow: 0 0 5px rgba(255, 95, 87, 0.6);
   animation: blink 2s infinite;
+  border: 1px solid rgba(255, 255, 255, 0.13);
 }
 blink {
   animation: blink 2s infinite;
@@ -233,7 +244,7 @@ blink {
   </div>
 
   <!-- About me -->
-  <div class="window-card" style="left: 5%; top: 60%;">
+  <div class="window-card" style="left: 5%; top: 58%;">
     <div class="window-header">
       <span class="btn red"></span>
       <span class="btn yellow"></span>
@@ -243,6 +254,7 @@ blink {
     <div class="window-body">
       <p style="font-weight: bold; font-size: 1.05rem;">Hey there, I'm AIX, I'm a self-taught  front-end dev and designer with a love for creating unique and interesting projects.</p>
       <ul>
+        <div style="height: 15px;"></div> <!-- space maker 5000 -->
         <li>17 years old</li>
         <li>Based in Europe</li>
       </ul>
@@ -418,7 +430,7 @@ blink {
 <script>
   const popup = document.getElementById('mobile-popup');
   const closeBtn = document.getElementById('close-popup');
-  const threshold = 768; // width in px to consider "mobile"
+  const threshold = 768; 
 
   function checkWidth() {
     if (window.innerWidth <= threshold) {
@@ -443,6 +455,3 @@ blink {
 
   </body>
 </html>
-
-
-
