@@ -382,21 +382,18 @@ blink {
     text-align: center;
     z-index: 99999;
   }
-
   #mobile-popup h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #fff;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   }
-
   #mobile-popup p {
     font-size: 1.1rem;
     max-width: 400px;
     margin-bottom: 2rem;
     color: #ffffff;
   }
-
   #mobile-popup button {
     padding: 12px 25px;
     font-size: 1rem;
@@ -409,7 +406,6 @@ blink {
     box-shadow: 0 0 8px #ffffffaa;
     transition: background 0.3s ease;
   }
-
   #mobile-popup button:hover {
     background: #ffffffaa;
   }
@@ -417,31 +413,34 @@ blink {
 
 <div id="mobile-popup">
   <h2>Mobile Detected</h2>
-  <p>My websites dont really work well on mobile devices. For the best experience, please visit on desktop or laptop.</p>
+  <p>My websites don't really work well on mobile devices. For the best experience, please visit on desktop or laptop.</p>
   <button id="close-popup">Continue Anyway</button>
 </div>
 
 <script>
-  function isMobileDevice() {
-    const ua = navigator.userAgent;
-    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-    const isSmallScreen = window.innerWidth <= 768;
-    return isMobileUA && isSmallScreen;
+  const popup = document.getElementById('mobile-popup');
+  const closeBtn = document.getElementById('close-popup');
+  const threshold = 768; // width in px to consider "mobile"
+
+  function checkWidth() {
+    if (window.innerWidth <= threshold) {
+      popup.style.display = 'flex';
+    } else {
+      popup.style.display = 'none';
+    }
   }
 
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  window.addEventListener('resize', checkWidth);
+
   document.addEventListener('DOMContentLoaded', () => {
-    if (isMobileDevice()) {
-      const popup = document.getElementById('mobile-popup');
-      const closeBtn = document.getElementById('close-popup');
-
-      popup.style.display = 'flex';
-
-      closeBtn.addEventListener('click', () => {
-        popup.style.display = 'none';
-      });
-    }
+    checkWidth();
   });
 </script>
+
 
 
   </body>
