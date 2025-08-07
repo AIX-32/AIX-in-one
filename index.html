@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIX in one</title>
+  <link rel="icon" href="./extra/favicon-16x16.png">
+  <link rel="icon" href="./extra/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 100vh;
+      background: url('https://i.pinimg.com/originals/42/b4/25/42b4251d2ce8a81efbafdd9d0812383e.jpg') center/cover no-repeat;
+      font-family: 'Segoe UI', sans-serif;
+      user-select: none;
+      overflow: hidden;
+    }
+    .window-card {
+      position: absolute;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      overflow: hidden;
+      touch-action: none;
+      cursor: default;
+    }
+    .window-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.111);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: move;
+      backdrop-filter: blur(30px);
+    }
+    .window-header .btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .red { background-color: #ff5f57; }
+    .yellow { background-color: #ffbd2e; }
+    .green { background-color: #28c840; }
+    .title {
+      margin-left: auto;
+      font-size: 0.9rem;
+      color: #ccc;
+      font-weight: bold;
+    }
+    .window-body {
+      padding: 20px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .widegrid2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      padding: 20px;
+      gap: 10px;
+    }
+    .imgbox {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: all 0.4s ease;
+    }
+    .imgbox:hover {
+      transform: translateY(6px);
+    }
+    .img-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .img-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(231, 231, 231);
+      font-weight: bold;
+      font-size: 1.2rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-shadow: 0 0 5px rgb(109, 109, 109);
+      white-space: nowrap;
+    }
+    .img-container:hover .img-title {
+      opacity: 1;
+    }
+    .window-body ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .icongrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      justify-items: center;
+      gap: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+.card {
+  width: 100%;
+  min-height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.4;
+}
+.redcirclework {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ff5f57;
+  flex-shrink: 0;
+  margin-left: 10px;
+  box-shadow: 0 0 5px rgba(255, 95, 87, 0.6);
+  animation: blink 2s infinite;
+}
+blink {
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+  </style>
+</head>
+<body>
+    
+  <!-- Work? -->
+  <div class="window-card" style="left: 65%; top: 3%;">
+    <div class="window-header">
+      <span class="btn red"></span>
+      <span class="btn yellow"></span>
+      <span class="btn green"></span>
+      <span class="title">Work?</span>
+    </div>
+    <div class="window-body">
+      <div class="card">
+        <div style="font-weight: bold; font-size: 1.1rem;">Not available for work</div>
+        <div class="redcirclework"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- My Skills -->
+  <div class="window-card" style="left: 5%; top: 10%;">
+    <div class="window-header">
+      <span class="btn red"></span>
+      <span class="btn yellow"></span>
+      <span class="btn green"></span>
+      <span class="title">My skills</span>
+    </div>
+    <div class="window-body">
+      <ul>
+        <li>Web Design &amp; Development</li>
+        <li>UI/UX Design</li>
+        <li>Graphic Design</li>
+        <li>Project Management</li>
+        <li>Pixel Art</li>
+        <li>And "some" video editing skills</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="window-card" style="left: 65%; top: 20%;">
+    <div class="window-header">
+      <span class="btn red"></span>
+      <span class="btn yellow"></span>
+      <span class="btn green"></span>
+      <span class="title">Projects</span>
+    </div>
+    <div class="widegrid2">
+      <a href="https://www.bloxdforge.com/" target="_blank" class="img-container">
+        <img class="imgbox" src="./img/Forge.png" alt="BloxdForge" />
+        <div class="img-title">BloxdForge</div>
+      </a>
+      <a href="https://aix-32.github.io/Webmate/" target="_blank" class="img-container">
+        <img class="imgbox" src="./img/webmate.png" alt="Webmate" />
+        <div class="img-title">Webmate</div>
+      </a>
+      <a href="https://github.com/AIX-32/Track-Win95" target="_blank" class="img-container">
+        <img class="imgbox" src="./img/ts.png" alt="Track Win95" />
+        <div class="img-title">Track Win95</div>
+      </a>
+      <a href="https://aix-32.github.io/XyleOS/" target="_blank" class="img-container">
+        <img class="imgbox" src="./img/xyleos.png" alt="XyleOS" />
+        <div class="img-title">XyleOS</div>
+      </a>
+      <a href="https://aix-32.github.io/XyeOS/" target="_blank" class="img-container">
+        <img class="imgbox" src="./img/xyeos.png" alt="XyeOS" />
+        <div class="img-title">XyeOS</div>
+      </a>
+      <a href="https://aix-32.github.io/Hypon-AI/" target="_blank" class="img-container">
+        <img class="imgbox" src="./img/Hypon AI.png" alt="Hypon AI" />
+        <div class="img-title">Hypon AI</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- About me -->
+  <div class="window-card" style="left: 5%; top: 60%;">
+    <div class="window-header">
+      <span class="btn red"></span>
+      <span class="btn yellow"></span>
+      <span class="btn green"></span>
+      <span class="title">About me</span>
+    </div>
+    <div class="window-body">
+      <p style="font-weight: bold; font-size: 1.05rem;">Hey there, I'm AIX, a web developer and designer with a love for creating unique and interesting projects.</p>
+      <ul>
+        <li>17 years old</li>
+        <li>Based in Europe</li>
+        <li>Focused on frontend & UI design</li>
+        <li>Currently building fun experiments and web tools</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Links -->
+  <div class="window-card" style="left: 5%; top: 40%;">
+    <div class="window-header">
+      <span class="btn red"></span>
+      <span class="btn yellow"></span>
+      <span class="btn green"></span>
+      <span class="title">Links</span>
+    </div>
+    <div class="window-body">
+      <div class="icongrid">
+        <a href="https://github.com/AIX-32" target="_blank">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a href="https://discord.gg/nVgUe4qrhr" target="_blank">
+          <i class="fab fa-discord fa-2x"></i>
+        </a>
+        <a href="https://www.youtube.com/@A_I_X" target="_blank">
+          <i class="fab fa-youtube fa-2x"></i>
+        </a>
+        <a href="https://www.youtube.com/@Aural-exe" target="_blank">
+          <i class="fas fa-headphones fa-2x"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const windows = document.querySelectorAll('.window-card');
+    let isDragging = false;
+    let draggedWindow = null;
+    let offsetX = 0;
+    let offsetY = 0;
+    let zIndexCounter = 10;
+
+    function setPointerEvents(win, state) {
+      win.querySelectorAll('iframe').forEach(iframe => {
+        iframe.style.pointerEvents = state ? 'none' : '';
+      });
+    }
+
+    function onDragStart(e, win) {
+      if (!(e.target === win.querySelector('.window-header') || e.target.classList.contains('title'))) return;
+
+      isDragging = true;
+      draggedWindow = win;
+
+      const rectWithTransform = draggedWindow.getBoundingClientRect();
+
+      draggedWindow.style.transform = '';
+
+      draggedWindow.style.left = `${rectWithTransform.left}px`;
+      draggedWindow.style.top = `${rectWithTransform.top}px`;
+
+      const rect = draggedWindow.getBoundingClientRect();
+
+      const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+
+      offsetX = clientX - rect.left;
+      offsetY = clientY - rect.top;
+
+      setPointerEvents(draggedWindow, true);
+
+      document.body.style.cursor = 'grabbing';
+      draggedWindow.style.cursor = 'grabbing';
+      document.body.style.userSelect = 'none';
+
+      draggedWindow.style.zIndex = ++zIndexCounter;
+    }
+
+    function onDragMove(e) {
+      if (!isDragging || !draggedWindow) return;
+
+      const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+
+      const x = clientX - offsetX;
+      const y = clientY - offsetY;
+
+      const maxX = window.innerWidth - draggedWindow.offsetWidth;
+      const maxY = window.innerHeight - draggedWindow.offsetHeight;
+
+      draggedWindow.style.left = `${Math.min(Math.max(0, x), maxX)}px`;
+      draggedWindow.style.top = `${Math.min(Math.max(0, y), maxY)}px`;
+
+      if (e.type === 'touchmove') e.preventDefault();
+    }
+
+    function onDragEnd() {
+      if (!isDragging || !draggedWindow) return;
+      setPointerEvents(draggedWindow, false);
+      document.body.style.cursor = '';
+      draggedWindow.style.cursor = '';
+      document.body.style.userSelect = '';
+      isDragging = false;
+      draggedWindow = null;
+    }
+
+    windows.forEach(win => {
+      const header = win.querySelector('.window-header');
+      header.addEventListener('mousedown', e => onDragStart(e, win));
+      header.addEventListener('touchstart', e => onDragStart(e, win), { passive: false });
+    });
+
+    document.addEventListener('mousemove', onDragMove);
+    document.addEventListener('touchmove', onDragMove, { passive: false });
+
+    document.addEventListener('mouseup', onDragEnd);
+    document.addEventListener('touchend', onDragEnd);
+  });
+</script>
+
+</body>
+</html>
