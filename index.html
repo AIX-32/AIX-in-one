@@ -81,9 +81,13 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 12px;
       transition: all 0.4s ease;
-      
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 8px;
+      outline: 0.6px solid rgba(255, 255, 255, 0.27);
     }
     .imgbox:hover {
       transform: translateY(6px);
@@ -148,14 +152,20 @@ i:hover {
   line-height: 1.4;
   border: 1px solid rgba(255, 255, 255, 0.13);
 }
+p {
+  font-size: 0.5rem;
+  color: #ccc;
+  position: absolute;
+  bottom: 0;
+}
 .redcirclework {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background-color: #ff5f57;
+  background-color: #8fff57;
   flex-shrink: 0;
   margin-left: 10px;
-  box-shadow: 0 0 5px rgba(255, 95, 87, 0.6);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
   animation: blink 2s infinite;
   border: 1px solid rgba(255, 255, 255, 0.13);
 }
@@ -181,8 +191,9 @@ blink {
     </div>
     <div class="window-body">
       <div class="card">
-        <div style="font-weight: bold; font-size: 1.1rem;">Not available for work</div>
+        <div style="font-weight: bold; font-size: 1.1rem;">Available for work</div>
         <div class="redcirclework"></div>
+        <p>I work for free :3</p>
       </div>
     </div>
   </div>
